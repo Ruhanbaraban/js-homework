@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="active" id="name-box">
+        <h2 class="name-header">Назови свое имя</h2>
+        <input type="text" id="input-name" autocomplete="off">
+         <button id="name-submit">Ты готов?</button>
+    </div>
+    <div id="character-choice">
+        <h2 class="choice-header">Выберите персонажа</h2>
+        <div class="choice-variants">
+            <button class="character-var" data-char="magican">Маг</button>
+            <button class="character-var" data-char="human">Человек</button>
+            <button class="character-var" data-char="dwarf">Гном</button>
+        </div>
+    </div>
+    <div id="game-wrapper">
+        <h1 id="game-header">Dark Fantasy</h1>
+        <div class="hero">
+            <ul class="hero-characteristics">
+                <li class="hero-characteristic">Имя: <span id="name"></span></li>
+                <li class="hero-characteristic">Здоровье: <span id="health"></span>HP</li>
+                <li class="hero-characteristic">Сила: <span id="strenght"></span></li>
+                <li class="hero-characteristic">Защита: <span id="defence"></span></li>
+                <li class="hero-characteristic">Уровень: <span id="level"></span></li>
+                <li class="hero-characteristic">Инвентарь: <span id="inventory"></span></li>
+            </ul>
+            <div class="actions">
+                <div class="action" id="attack">Атаковать</div>
+                <div class="action" id="defence">Защищаться</div>
+                <div class="action" id="use-item">Использовать предмет</div>
+            </div>
+        </div>
+        <div class="location">
+            <h3 class="current-loc">Текущая локация: <span id="loc-name"></span></h3>
+            <div class="loc-variant" id="var-1">Идти в лес</div>
+            <div class="loc-variant" id="var-2">Идти в подземелье</div>
+            <div class="loc-variant" id="var-3">Идти в замок</div>
+        </div>
+        <textarea id="events" readonly>Вас окружает тишина...</textarea>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
