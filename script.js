@@ -1,9 +1,12 @@
-let charName = document.getElementById("name");
-let charHealth = document.getElementById("health");
-let charStrenght = document.getElementById("strenght");
-let charDefence = document.getElementById("defence");
-let charLevel = document.getElementById("level");
-let charInventory = document.getElementById("inventory");
+const charName = document.getElementById("name");
+const charHealth = document.getElementById("health");
+const charStrenght = document.getElementById("strenght");
+const charDefence = document.getElementById("defence");
+const charLevel = document.getElementById("level");
+const charInventory = document.getElementById("inventory");
+const locationsVar = document.getElementsByClassName("loc-variant")
+const currentLocation = document.getElementById("loc-name");
+const locVariant = document.getElementsByClassName("loc-variant");
 
 const nameBox = document.getElementById("name-box");
 const inputName = document.getElementById("input-name");
@@ -41,6 +44,7 @@ const enemies = {
         defence: 2
     }
 }
+let isEnemyAround = false;
 
 let characters = {
     magican: {
@@ -59,6 +63,11 @@ let characters = {
         defence: 5
     }
 }
+
+const locations = ["Деревня", "Лес", "Подземелье", "Темный Замок"];
+let currentLocationName = locations[0];
+let othersLoc = locations.slice(1, 4);
+console.log(othersLoc);
 
 nameSubmitButton.addEventListener("click", () => {
     if(inputName.value.length >= 3 && inputName.value.length <= 8){
@@ -91,3 +100,13 @@ Array.from(characterVar).forEach((el) => {
     });
 });
 
+currentLocation.innerHTML = currentLocationName;
+
+
+
+Array.from(locVariant).forEach((el, i) => {
+    el.addEventListener("click", () => {
+        
+        currentLocation.innerHTML = othersLoc[i];
+    });
+});

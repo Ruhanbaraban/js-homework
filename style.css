@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     font-family: "SUSE Mono", sans-serif;
+    user-select: none;
 }
 
 body{
@@ -212,6 +213,11 @@ body{
     display: flex;
     align-items: center;
     gap: 5px;
+}
+
+#game-wrapper .location .current-loc #loc-name{
+    color: #00a2ff;
+    text-shadow: 0 0 10px #00a2ff;
 }
 
 #game-wrapper .location .loc-variant{
