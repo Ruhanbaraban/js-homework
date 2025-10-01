@@ -132,6 +132,7 @@ body{
 #game-wrapper .hero{
     width: 100%;
     display: flex;
+    gap: 5px;
 }
 
 #game-wrapper .hero .hero-characteristics{
@@ -170,7 +171,7 @@ body{
 }
 
 #game-wrapper .hero .actions .action{
-    width: 150px;
+    width: 100%;
     padding: 10px 1px;
     display: flex;
     align-items: center;

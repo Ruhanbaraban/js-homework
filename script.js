@@ -19,6 +19,29 @@ let myDefence = null;
 let myLevel = 1;
 let myInventory = [];
 
+const enemies = {
+    ogr: {
+        health: 60,
+        strenght: 10,
+        defence: 3
+    },
+    druid: {
+        health: 40,
+        strenght: 7,
+        defence: 9
+    },
+    knight: {
+        health: 100,
+        strenght: 4,
+        defence: 5
+    },
+    zombie: {
+        health: 100,
+        strenght: 4,
+        defence: 2
+    }
+}
+
 let characters = {
     magican: {
         health: 50,
