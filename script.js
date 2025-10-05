@@ -1,12 +1,14 @@
 const charName = document.getElementById("name");
-const charHealth = document.getElementById("health");
+let charHealth = document.getElementById("health");
 const charStrenght = document.getElementById("strenght");
 const charDefence = document.getElementById("defence");
-const charLevel = document.getElementById("level");
-const charInventory = document.getElementById("inventory");
+let charLevel = document.getElementById("level");
+let charInventory = document.getElementById("inventory");
 const locationsVar = document.getElementsByClassName("loc-variant")
+const nameVar = document.getElementsByClassName("name-variant")
 const currentLocation = document.getElementById("loc-name");
-const locVariant = document.getElementsByClassName("loc-variant");
+const events = document.getElementById("events");
+const action = document.getElementsByClassName("action");
 
 const nameBox = document.getElementById("name-box");
 const inputName = document.getElementById("input-name");
@@ -21,30 +23,6 @@ let myStrenght = null;
 let myDefence = null;
 let myLevel = 1;
 let myInventory = [];
-
-const enemies = {
-    ogr: {
-        health: 60,
-        strenght: 10,
-        defence: 3
-    },
-    druid: {
-        health: 40,
-        strenght: 7,
-        defence: 9
-    },
-    knight: {
-        health: 100,
-        strenght: 4,
-        defence: 5
-    },
-    zombie: {
-        health: 100,
-        strenght: 4,
-        defence: 2
-    }
-}
-let isEnemyAround = false;
 
 let characters = {
     magican: {
@@ -64,17 +42,14 @@ let characters = {
     }
 }
 
-const locations = ["Деревня", "Лес", "Подземелье", "Темный Замок"];
-let currentLocationName = locations[0];
-let othersLoc = locations.slice(1, 4);
-console.log(othersLoc);
+const locations = ["Деревня", "Темный Замок", "Лес"];
+let currentLoc = locations[0]; 
 
 nameSubmitButton.addEventListener("click", () => {
     if(inputName.value.length >= 3 && inputName.value.length <= 8){
         let arrName = inputName.value;
         myName = arrName.charAt(0).toUpperCase() + arrName.slice(1);
         charName.innerHTML = myName;
-        console.log(charName);
         nameBox.classList.remove("active");
         characterChoice.classList.add("active")
     } else {
@@ -88,6 +63,7 @@ Array.from(characterVar).forEach((el) => {
         myHealth = characters[charType].health;
         myStrenght = characters[charType].strenght;
         myDefence = characters[charType].defence;
+        currentChar = characters[charType];
 
         charHealth.innerHTML = myHealth;
         charStrenght.innerHTML = myStrenght;
@@ -100,13 +76,17 @@ Array.from(characterVar).forEach((el) => {
     });
 });
 
-currentLocation.innerHTML = currentLocationName;
+Array.from(nameVar).forEach((e, i) => {
+    e.innerHTML = locations[i];
+});
 
-
-
-Array.from(locVariant).forEach((el, i) => {
+Array.from(locationsVar).forEach((el, i) => {
     el.addEventListener("click", () => {
-        
-        currentLocation.innerHTML = othersLoc[i];
+        currentLoc = locations[i];
+        currentLocation.innerHTML = currentLoc;
     });
 });
+
+function castle(){
+    events.innerHTML = `На вас напал ${currentLoc.ene}`
+}

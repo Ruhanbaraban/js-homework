@@ -220,7 +220,7 @@ body{
     text-shadow: 0 0 10px #00a2ff;
 }
 
-#game-wrapper .location .loc-variant{
+#game-wrapper .location div{
     width: 100%;
     color: #00a2ff;
     padding: 10px 1px;
@@ -230,6 +230,7 @@ body{
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    gap: 10px;
 }
 
 #game-wrapper #events{
